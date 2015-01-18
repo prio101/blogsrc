@@ -2,3 +2,4 @@ _site
 .sass-cache
 *.md~
 _site
+.gitignore
