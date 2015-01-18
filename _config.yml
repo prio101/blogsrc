@@ -1,0 +1,12 @@
+# Site settings
+title: Blog
+smalltalk: "A little space ship"
+description: > # My blog Powred by jekyll
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "http://mahabubislam.me" # the base hostname & protocol for your site
+twitter_username: prio_mahabub
+github_username:  prio101
+facebook_username: fallencurse
+portfolio_url: "http://mahabubislam.com"
+# Build settings
+markdown: kramdown
