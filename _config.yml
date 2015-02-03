@@ -3,10 +3,12 @@ title: Blog
 smalltalk: "A little space ship"
 description: > # My blog Powred by jekyll
 baseurl: "" # the subpath of your site, e.g. /blog/
+paginate: 5
 url: "http://mahabubislam.me" # the base hostname & protocol for your site
 twitter_username: prio_mahabub
 github_username:  prio101
 facebook_username: fallencurse
 portfolio_url: "http://mahabubislam.com"
+github_url:https://github.com/prio101
 # Build settings
 markdown: kramdown
