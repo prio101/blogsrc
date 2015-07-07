@@ -86,7 +86,7 @@
 
 <hr />
 
-<div class="post-img">
+<div class="post-img col-md-offset-2 col-lg-offset-2">
   <img class="img-responsive img-post" src="/img/gulp.png " />
  </div>
 
@@ -98,13 +98,42 @@
 <strong>As you can see this is quite needed  to know what we are working with.</strong></p>
 
 <p>So, today we will get geared with gulp by working with it . At the very beginning I would like to say,<em>You must have the Nodejs and Npm package manager installed in your Computer.</em>
-Go into official <a href="http://nodejs.org/">NODEJS</a> page and download it from there.
-—</p>
+Go into official <a href="http://nodejs.org/">NODEJS</a> page and download it from there.</p>
+
+<p>After that to install gulp globally we have to write <kbd>npm install -g gulp</kbd> in our terminal. After that to check if it is installed there or not, we can write <kbd>gulp -v</kbd></p>
+
+<hr />
 
 <p>Let us consider a situation, that we are working with a <a href="https://html5boilerplate.com/">HTML5-Boilerplate</a> and We badly in need to compress the javascript codes so the performance of the server response get raised.</p>
 
 <p>So, here is what we are going to do, in our terminal we are going to type destination of the current directory where we are working on. Like In my case its in <kbd>$ home/workstation/gulp-try/</kbd>. <br /><br />
 This is why in my terminal I wrote <kbd>cd /workstation/gulp-try/</kbd>. After that to install the gulp specific node module of uglify js which is named as “gulp-uglify” . We have to type, <kbd>npm install --save-dev gulp-uglify</kbd> in our Terminal. This will invoke the nodejs terms to get the module installed in our local directory.</p>
+
+<p>After that in the directory we have to create a file named <code>gulpfile.js</code>. After creating the file and opening it on any text editor. We have to write something like this to use gulp and gulp uglify. Just follow along and later we will explain more about it.</p>
+
+<pre><code>  var gulp        = require('gulp'),
+      gulpUglify  = require('gulp-uglify');
+
+  gulp.task('compress', function() {
+  return gulp.src('lib/*.js')
+    .pipe(gulpUglify())
+    .pipe(gulp.dest('dist'));
+  });
+
+  gulp.task('default',['compress']);
+</code></pre>
+
+<hr />
+
+<p>If we take a good look now we will see that we had to define two variable named <code>gulp</code> and <code>gulpUglify</code> and what it does is , these variables requires the gulp and gulp-uglify node modules and loads it and make it ready.</p>
+
+<p>After that you can see we wrote <code>gulp.task()</code> this is where we write specific task a module need to done for us. Inside the parentheses you will notice we named the task as <code>compress</code> and called a callback function after that. Inside the function returned the destination of scripts location we want to get compressed .</p>
+
+<p>After getting the source path we wrote , a pipe method which will add boundless and limitless features to a gulp task. In here we at first added the required <code>gulpUglify()</code> method and after that, we send a destination where it should save the files after compressing.</p>
+
+<p>At the very bottom of the code snippets , we wrote a default task , which will run when we invoke <kbd>gulp</kbd> in our terminal from that directory. This default task can take a array of tasks, thus you can invoke a series of different tasks module pretty easily one after another.</p>
+
+<p>So this is it . You have the idea about GULP and streams of it. There is thousands of gulp module available in the gulp site . Here is the link of it <a href="http://gulpjs.com/plugins/">Gulp Plugins</a> . So search what you need to get done. And make it happen.</p>
 
        </p>
 
