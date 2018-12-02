@@ -1,6 +1,6 @@
 /*This is the header section styles*/
 .header {
-  background: url("../img/bg.jpeg") 50% 0 no-repeat fixed;
+  background: #795548 50% 0 no-repeat fixed;
   width: 100%;
   min-height: 400px;
   margin: 0 auto;
@@ -12,7 +12,7 @@
     font-weight: 900;
     color: #fff;
     letter-spacing: 0.2em;
-    margin-top: 10%; }
+    padding: 0%; }
     .header h2 a {
       margin-left: 0%;
       color: #fff; }
@@ -23,10 +23,12 @@
     font-weight: 600;
     color: #fff;
     letter-spacing: .1em;
-    margin-top: 2%; }
+    margin-top: 2%; 
+    margin-bottom: 5%;
+  }
   .header a {
     text-decoration: none !important;
-    margin-left: 80%;
+    margin-left: 95%;
     color: #fff; }
     @media screen and (max-width: 360px) {
       .header a {
@@ -40,7 +42,14 @@
       text-decoration: none; }
       .header .social-pack a:hover {
         color: #00b3ee; }
-
+  .header .pages a:first-child {
+    margin-left: 40%;    
+  }  
+  
+  .header .pages a {
+    margin-left: 5%;
+    font-size: medium;
+  } 
 .post-loop {
   margin-top: 10%;
   margin-left: 25%;
@@ -189,7 +198,7 @@
 a {
   text-decoration: none !important; }
   a:hover {
-    color: #000 !important; }
+    color: #fff !important; }
     .post-image{
       width:100%;
       margin: 5%;

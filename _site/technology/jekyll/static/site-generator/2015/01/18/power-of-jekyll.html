@@ -10,29 +10,19 @@
   <title>Power of jekyll</title>
   <meta name="description" content="There is some powerful tools out there in the big vast ocean of the technology.Some of them is like ,  very  generous  toward the needsof a very specific tas...">
 
-  <link rel="canonical" href="http://mahabubislam.me/technology/jekyll/static/site-generator/2015/01/18/power-of-jekyll.html">
-  <!-- <link rel="alternate" type="application/rss+xml" title="Blog" href="http://mahabubislam.me/feed.xml" /> -->
-
+  <link rel="canonical" href="http://localhost:4000/technology/jekyll/static/site-generator/2015/01/18/power-of-jekyll.html">
+  <!-- <link rel="alternate" type="application/rss+xml" title="Mahabub Islam" href="http://localhost:4000/feed.xml" /> -->
   <!-- Latest compiled and minified CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
  
-
-	
-  <!--Added styles css-->	
-  <link rel="stylesheet" href="/css/normalize.css"/>
-
-  <link rel="stylesheet" href="/css/custom.css"/>
-
-   <link rel="stylesheet" href="/css/style.css"/>
-
+    <!--Added styles css-->	
+    <link rel="stylesheet" href="/css/normalize.css"/>
+    <link rel="stylesheet" href="/css/custom.css"/>
+    <link rel="stylesheet" href="/css/style.css"/>
     <!--Font awesome-->
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-
    <!--modernizr-->
    <script src="js/modernizr.js"></script>
-	
-
-
 </head>
 
 
@@ -41,21 +31,34 @@
       <strong>It seems your browser is quite a bit old, to get latest browser go to this link <a href="http://browsehappy.com">BROWSE HAPPY </a> And get the happy face</strong>
   <![endif]-->
 
-  
-<!-- Start with the header -->
+  <!-- Start with the header -->
 <section class="header" id="header">
-
-
-
-    <a class="tab pi-default pi-big pi-flat" target="_blank" href="https://github.com/prio101"><i class="fa fa-github"></i> My Github</a>
-
+    <section class="social-links">
+        <a class="tab pi-default pi-big pi-flat" target="_blank" href="https://github.com/prio101">
+            <i class="fa fa-github"></i>
+        </a>
+        <a class="tab pi-warn pi-big pi-flat" target="_blank" href="https://medium.com/@miprio101">
+            <i class="fa fa-medium"></i> 
+        </a>
+        <a class="tab pi-default pi-big pi-flat" target="_blank" href="https://twitter.com/prio_mahabub">
+            <i class="fa fa-twitter"></i> 
+        </a>
+        <a class="tab pi-warn pi-big pi-flat" target="_blank" href="https://stackoverflow.com/users/story/3276347">
+            <i class="fa fa-stack-overflow"></i> 
+        </a>
+        <a class="tab pi-default pi-big pi-flat" target="_blank" href="https://www.linkedin.com/in/miprio101/">
+            <i class="fa fa-linkedin"></i> 
+        </a>
+    </section>
+    
     <!-- Main Head Title -->
-    <h2><a href="/">Blog</a></h2>
-    <p>A little space ship</p>
-
-
-
-
+    <h2><a href="/">Mahabub Islam</a></h2>
+    <p>Nerdy Space Astronaut</p>
+    <section class="pages">
+        <a  href="/">Home</a>
+        <a  href="/about">About</a>
+        <a  href="/career">Career</a>
+    </section>
 </section>
 
 
@@ -102,8 +105,8 @@ not want to take the hustle of Database management  stuff.
 you can install it in your computer just by writing one command ,
 which is,</p>
 
-<pre><code>  $ gem install jekyll
-</code></pre>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  $ gem install jekyll
+</code></pre></div></div>
 
 <p>And all of a sudden you are ready to run <strong>Jekyll</strong>.</p>
 
@@ -117,8 +120,8 @@ which is,</p>
     or , you simply can install it with <strong>apt-get</strong> package manager.
     with this command, open your <em>Terminal</em> and write,</p>
 
-<pre><code>  $ sudo apt-get install ruby
-</code></pre>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  $ sudo apt-get install ruby
+</code></pre></div></div>
 
 <p>And this will come with latest stable package of Ruby available for your PC with
    <em>gem</em> installer packed.</p>
@@ -128,17 +131,17 @@ For this I suppose you will have to have CURL installed in your PC . which is me
 developer.
 steps:</p>
 
-<pre><code>   $ sudo apt-get install curl
-</code></pre>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   $ sudo apt-get install curl
+</code></pre></div></div>
 
 <p>I am encoraging you to follow along the steps in <a href="https://github.com/joyent/node/wiki/installing-node.js-via-package-manager">Github</a></p>
 
 <p>But , meantime you can install it in ubuntu by</p>
 
-<pre><code>  $ curl -sL https://deb.nodesource.com/setup | sudo bash -
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  $ curl -sL https://deb.nodesource.com/setup | sudo bash -
 
   $ sudo apt-get install -y nodejs
-</code></pre>
+</code></pre></div></div>
 
 <p>Easy , right?</p>
 
@@ -147,23 +150,23 @@ steps:</p>
 
 <p>[If installed the ruby package]</p>
 
-<pre><code>  $ ruby --version
-</code></pre>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  $ ruby --version
+</code></pre></div></div>
 
 <p>[If using RVM]</p>
 
-<pre><code> $ rvm list
-</code></pre>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> $ rvm list
+</code></pre></div></div>
 
 <p>[For NodeJs]</p>
 
-<pre><code>  $ node --version
-</code></pre>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  $ node --version
+</code></pre></div></div>
 
 <p>4 . So now everything you need is ready , its time to install the <strong>jekyll</strong> ,  let’s do it by ,</p>
 
-<pre><code>  $ gem install jekyll 
-</code></pre>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  $ gem install jekyll 
+</code></pre></div></div>
 
 <p>And this will install all the jekyll stuff automatically.</p>
 
@@ -172,7 +175,7 @@ steps:</p>
 
 <p>If confused , then follow these steps,</p>
 
-<pre><code>  $ cd  			# This will take you to the HOME folder
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  $ cd  			# This will take you to the HOME folder
 
   $ mkdir test  		# This will make you a folder named test
 
@@ -183,7 +186,7 @@ steps:</p>
   $ cd site			# This change your directory in site folder
 
   $ jekyll serve		# Well this will serve you a freshly cooked jekyll
-</code></pre>
+</code></pre></div></div>
 
 <h3> Bam!!! you are awesome</h3>
 
@@ -271,7 +274,8 @@ steps:</p>
 
 
 
-    <section class="footer ">
+    <hr>
+<section class="footer ">
 
     <div class="row">
 
@@ -295,7 +299,7 @@ steps:</p>
 
             
       <span>
-        <a class="header-link" href="http://mahabubislam.com"  target="_blank">
+        <a class="header-link" href="http://mahabub.space"  target="_blank">
             <i class="fa fa-2x fa-laptop"></i>
 
         </a>
@@ -303,12 +307,6 @@ steps:</p>
             
 
 
-            
-      <span>
-        <a class="header-link" href="https://facebook.com/fallencurse"  target="_blank">
-            <i class="fa fa-2x fa-facebook-square "></i>
-        </a>
-      </span>
             
         </div>
 

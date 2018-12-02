@@ -1,14 +1,17 @@
 # Site settings
-title: Blog
-smalltalk: "A little space ship"
-description: > # My blog Powred by jekyll
+title: Mahabub Islam
+smalltalk: "Nerdy Space Astronaut"
+description: "Awesome Nerd" # My blog Powred by jekyll
 baseurl: "" # the subpath of your site, e.g. /blog/
 paginate: 5
-url: "http://mahabubislam.me" # the base hostname & protocol for your site
+url: "http://mahabub.space" # the base hostname & protocol for your site
 twitter_username: prio_mahabub
-github_username:  prio101
-facebook_username: fallencurse
-portfolio_url: "http://mahabubislam.com"
+stack_over_flow_link: https://stackoverflow.com/users/story/3276347
+github_username: prio101
+medium_username: "@miprio101"
+linked_in_link: https://www.linkedin.com/in/miprio101/
+
+portfolio_url: "http://mahabub.space"
 
 # Build settings
 markdown: kramdown

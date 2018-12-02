@@ -10,29 +10,19 @@
   <title>Getting up  with RVM</title>
   <meta name="description" content="There is many times in different blogs and in forums I watch a post about ruby installtion problem . Even if I stay honest I also face that kind of problem ....">
 
-  <link rel="canonical" href="http://mahabubislam.me/technology/ruby/rvm/2015/01/18/getting-rvm.html">
-  <!-- <link rel="alternate" type="application/rss+xml" title="Blog" href="http://mahabubislam.me/feed.xml" /> -->
-
+  <link rel="canonical" href="http://localhost:4000/technology/ruby/rvm/2015/01/18/getting-rvm.html">
+  <!-- <link rel="alternate" type="application/rss+xml" title="Mahabub Islam" href="http://localhost:4000/feed.xml" /> -->
   <!-- Latest compiled and minified CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
  
-
-	
-  <!--Added styles css-->	
-  <link rel="stylesheet" href="/css/normalize.css"/>
-
-  <link rel="stylesheet" href="/css/custom.css"/>
-
-   <link rel="stylesheet" href="/css/style.css"/>
-
+    <!--Added styles css-->	
+    <link rel="stylesheet" href="/css/normalize.css"/>
+    <link rel="stylesheet" href="/css/custom.css"/>
+    <link rel="stylesheet" href="/css/style.css"/>
     <!--Font awesome-->
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-
    <!--modernizr-->
    <script src="js/modernizr.js"></script>
-	
-
-
 </head>
 
 
@@ -41,21 +31,34 @@
       <strong>It seems your browser is quite a bit old, to get latest browser go to this link <a href="http://browsehappy.com">BROWSE HAPPY </a> And get the happy face</strong>
   <![endif]-->
 
-  
-<!-- Start with the header -->
+  <!-- Start with the header -->
 <section class="header" id="header">
-
-
-
-    <a class="tab pi-default pi-big pi-flat" target="_blank" href="https://github.com/prio101"><i class="fa fa-github"></i> My Github</a>
-
+    <section class="social-links">
+        <a class="tab pi-default pi-big pi-flat" target="_blank" href="https://github.com/prio101">
+            <i class="fa fa-github"></i>
+        </a>
+        <a class="tab pi-warn pi-big pi-flat" target="_blank" href="https://medium.com/@miprio101">
+            <i class="fa fa-medium"></i> 
+        </a>
+        <a class="tab pi-default pi-big pi-flat" target="_blank" href="https://twitter.com/prio_mahabub">
+            <i class="fa fa-twitter"></i> 
+        </a>
+        <a class="tab pi-warn pi-big pi-flat" target="_blank" href="https://stackoverflow.com/users/story/3276347">
+            <i class="fa fa-stack-overflow"></i> 
+        </a>
+        <a class="tab pi-default pi-big pi-flat" target="_blank" href="https://www.linkedin.com/in/miprio101/">
+            <i class="fa fa-linkedin"></i> 
+        </a>
+    </section>
+    
     <!-- Main Head Title -->
-    <h2><a href="/">Blog</a></h2>
-    <p>A little space ship</p>
-
-
-
-
+    <h2><a href="/">Mahabub Islam</a></h2>
+    <p>Nerdy Space Astronaut</p>
+    <section class="pages">
+        <a  href="/">Home</a>
+        <a  href="/about">About</a>
+        <a  href="/career">Career</a>
+    </section>
 </section>
 
 
@@ -96,45 +99,45 @@
 
 <h5 id="step-1">Step 1:</h5>
 
-<p>I hope you are using UBUNTU or any Linux based system , so please type <code>ctrl</code>+<code>alt</code>+<code>t</code> which will bring up your Terminal . After that type ,</p>
+<p>I hope you are using UBUNTU or any Linux based system , so please type <code class="highlighter-rouge">ctrl</code>+<code class="highlighter-rouge">alt</code>+<code class="highlighter-rouge">t</code> which will bring up your Terminal . After that type ,</p>
 
-<pre><code>$ gpg --keyserver hkp://keys.gnupg.net --recv-keys D39DC0E3
-</code></pre>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ gpg --keyserver hkp://keys.gnupg.net --recv-keys D39DC0E3
+</code></pre></div></div>
 
-<p>After hitting the <code>Enter</code> key This command will grab some data and bind it for greater good.</p>
+<p>After hitting the <code class="highlighter-rouge">Enter</code> key This command will grab some data and bind it for greater good.</p>
 
 <h5 id="step-2">Step 2:</h5>
 
 <p>So now in this step just write some more text in your terminal ,which will install the <em>RVM</em>,</p>
 
-<pre><code>$ \curl -sSL https://get.rvm.io | bash -s stable
-</code></pre>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ \curl -sSL https://get.rvm.io | bash -s stable
+</code></pre></div></div>
 
 <p>This will install the <strong>Stable</strong> version of <em>RVM</em> in your computer, but if your terminal shows some error about not finding the <strong>Curl</strong> package then don’t be scared . You can get it by Typing,</p>
 
-<pre><code>$ sudo apt-get install curl
-</code></pre>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ sudo apt-get install curl
+</code></pre></div></div>
 
 <p>After the installtion of curl you can always install <em>RVM</em> by writing previous line.</p>
 
 <h5 id="step-3">Step 3:</h5>
-<p>Now take a deep breath and go in your Terminals <code>Edit</code>-&gt; <code>Preference</code> menu and check the <em>Run terminal as login shell</em> option . Restart the Terminal. And its done.</p>
+<p>Now take a deep breath and go in your Terminals <code class="highlighter-rouge">Edit</code>-&gt; <code class="highlighter-rouge">Preference</code> menu and check the <em>Run terminal as login shell</em> option . Restart the Terminal. And its done.</p>
 
 <h5 id="step-4">Step 4:</h5>
 <p>So now in your terminal you can check for all the available Ruby out there , by typing,</p>
 
-<pre><code>$ rvm list known
-</code></pre>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ rvm list known
+</code></pre></div></div>
 
 <p>Which will show the ruby package ready to get hop in your computer . To install them type,</p>
 
-<pre><code>$ rvm install 2.1 # Or any version you do prefer
-</code></pre>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ rvm install 2.1 # Or any version you do prefer
+</code></pre></div></div>
 
 <p>This command will install the <em>Ruby</em> in your machine . You can recheck your installtion and see which one is currently using by typing ,</p>
 
-<pre><code>$ rvm list
-</code></pre>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ rvm list
+</code></pre></div></div>
 
 <hr />
 <p>After getting this awesome tool , you can also look into the <strong>RBENV</strong> which is almost like <strong>RVM</strong> . And as from my view rather complex one out there. You can get all the documentaion in <a href="https://rvm.io/">RVM DOCS</a> and if you ran into some problem , you always can ask. Until next time , take care.</p>
@@ -156,10 +159,10 @@
                     <li><a>technology</a></li>
                     
                 
-                    <li><a>ruby</a></li>
+                    <li><a>Ruby</a></li>
                     
                 
-                    <li><a>rvm</a></li>
+                    <li><a>RVM</a></li>
                     
                    
                 </ul>
@@ -202,7 +205,8 @@
 
 
 
-    <section class="footer ">
+    <hr>
+<section class="footer ">
 
     <div class="row">
 
@@ -226,7 +230,7 @@
 
             
       <span>
-        <a class="header-link" href="http://mahabubislam.com"  target="_blank">
+        <a class="header-link" href="http://mahabub.space"  target="_blank">
             <i class="fa fa-2x fa-laptop"></i>
 
         </a>
@@ -234,12 +238,6 @@
             
 
 
-            
-      <span>
-        <a class="header-link" href="https://facebook.com/fallencurse"  target="_blank">
-            <i class="fa fa-2x fa-facebook-square "></i>
-        </a>
-      </span>
             
         </div>
 

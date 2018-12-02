@@ -1,18 +1,31 @@
-
 <!-- Start with the header -->
 <section class="header" id="header">
-
-
-
-    <a class="tab pi-default pi-big pi-flat" target="_blank" href="https://github.com/{{ site.github_username }}"><i class="fa fa-github"></i> My Github</a>
-
+    <section class="social-links">
+        <a class="tab pi-default pi-big pi-flat" target="_blank" href="https://github.com/{{ site.github_username }}">
+            <i class="fa fa-github"></i>
+        </a>
+        <a class="tab pi-warn pi-big pi-flat" target="_blank" href="https://medium.com/{{ site.medium_username }}">
+            <i class="fa fa-medium"></i> 
+        </a>
+        <a class="tab pi-default pi-big pi-flat" target="_blank" href="https://twitter.com/{{ site.twitter_username }}">
+            <i class="fa fa-twitter"></i> 
+        </a>
+        <a class="tab pi-warn pi-big pi-flat" target="_blank" href="{{ site.stack_over_flow_link }}">
+            <i class="fa fa-stack-overflow"></i> 
+        </a>
+        <a class="tab pi-default pi-big pi-flat" target="_blank" href="{{ site.linked_in_link }}">
+            <i class="fa fa-linkedin"></i> 
+        </a>
+    </section>
+    
     <!-- Main Head Title -->
     {% if site.title %}<h2><a href="{{site.baseurl}}/">{{site.title}}</a></h2>{% endif %}
     {% if site.smalltalk %}<p>{{ site.smalltalk }}</p>{% endif %}
-
-
-
-
+    <section class="pages">
+        <a  href="/">Home</a>
+        <a  href="/about">About</a>
+        <a  href="/career">Career</a>
+    </section>
 </section>
 
 

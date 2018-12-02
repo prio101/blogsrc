@@ -4,8 +4,34 @@ title: About
 permalink: /about/
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](http://jekyllrb.com/)
+# I am Mahabub Islam.
 
-You can find the source code for the Jekyll new theme at: [github.com/jglovier/jekyll-new](https://github.com/jglovier/jekyll-new)
+Extensive knowledge of Web development, from concept through implementation and optimisation.
+Analytical overview, problem solving mindset and creative thinking toward the new and
+existing product features.
 
-You can find the source code for Jekyll at [github.com/jekyll/jekyll](https://github.com/jekyll/jekyll)
+#### Core Qualification
+**I am a full-stack developer with more than 3.5 years experiences in Ruby On Rails web
+Development. I have been programming in Ruby on Rails for these years. My primary
+specialisation is Full-stack development of product features with emphasis on the
+backend and REST API and with Agile approach.**
+
+    - Test Driven Development.
+    - Team player and multitasking as whole.
+    - Working into start up environment.
+
+#### Technical Skills
+    - Ruby, Ruby on Rails
+    - Elixir Lang and Phoenix Framework.
+    - ReactJs, JavaScript
+    - PostgreSQL
+    - Git, GitHub, Gitlab, BitBucket
+    - WebServices/Restful API's
+    - Code Review
+    - Heroku, Digital Ocean servers [ DevOps Related works ]
+    - RSpec, TDD, BDD
+    - Agile Approach based working [ Sprint Based ]
+    - Unix Based Operating System.
+
+
+**Contact me at: me@mahabub.space**

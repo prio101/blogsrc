@@ -10,29 +10,19 @@
   <title>Rails 101</title>
   <meta name="description" content="There is a few awesome frameworks which is almost like ruling the worlds of Web Development. If I start to count there is some heavy amount of PHP frameworks...">
 
-  <link rel="canonical" href="http://mahabubislam.me/technology/ruby/rails/2015/01/19/rails-101.html">
-  <!-- <link rel="alternate" type="application/rss+xml" title="Blog" href="http://mahabubislam.me/feed.xml" /> -->
-
+  <link rel="canonical" href="http://localhost:4000/technology/ruby/rails/2015/01/19/rails-101.html">
+  <!-- <link rel="alternate" type="application/rss+xml" title="Mahabub Islam" href="http://localhost:4000/feed.xml" /> -->
   <!-- Latest compiled and minified CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
  
-
-	
-  <!--Added styles css-->	
-  <link rel="stylesheet" href="/css/normalize.css"/>
-
-  <link rel="stylesheet" href="/css/custom.css"/>
-
-   <link rel="stylesheet" href="/css/style.css"/>
-
+    <!--Added styles css-->	
+    <link rel="stylesheet" href="/css/normalize.css"/>
+    <link rel="stylesheet" href="/css/custom.css"/>
+    <link rel="stylesheet" href="/css/style.css"/>
     <!--Font awesome-->
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-
    <!--modernizr-->
    <script src="js/modernizr.js"></script>
-	
-
-
 </head>
 
 
@@ -41,21 +31,34 @@
       <strong>It seems your browser is quite a bit old, to get latest browser go to this link <a href="http://browsehappy.com">BROWSE HAPPY </a> And get the happy face</strong>
   <![endif]-->
 
-  
-<!-- Start with the header -->
+  <!-- Start with the header -->
 <section class="header" id="header">
-
-
-
-    <a class="tab pi-default pi-big pi-flat" target="_blank" href="https://github.com/prio101"><i class="fa fa-github"></i> My Github</a>
-
+    <section class="social-links">
+        <a class="tab pi-default pi-big pi-flat" target="_blank" href="https://github.com/prio101">
+            <i class="fa fa-github"></i>
+        </a>
+        <a class="tab pi-warn pi-big pi-flat" target="_blank" href="https://medium.com/@miprio101">
+            <i class="fa fa-medium"></i> 
+        </a>
+        <a class="tab pi-default pi-big pi-flat" target="_blank" href="https://twitter.com/prio_mahabub">
+            <i class="fa fa-twitter"></i> 
+        </a>
+        <a class="tab pi-warn pi-big pi-flat" target="_blank" href="https://stackoverflow.com/users/story/3276347">
+            <i class="fa fa-stack-overflow"></i> 
+        </a>
+        <a class="tab pi-default pi-big pi-flat" target="_blank" href="https://www.linkedin.com/in/miprio101/">
+            <i class="fa fa-linkedin"></i> 
+        </a>
+    </section>
+    
     <!-- Main Head Title -->
-    <h2><a href="/">Blog</a></h2>
-    <p>A little space ship</p>
-
-
-
-
+    <h2><a href="/">Mahabub Islam</a></h2>
+    <p>Nerdy Space Astronaut</p>
+    <section class="pages">
+        <a  href="/">Home</a>
+        <a  href="/about">About</a>
+        <a  href="/career">Career</a>
+    </section>
 </section>
 
 
@@ -100,42 +103,42 @@ There can be question , “why ?”</p>
 <p>I am running Ubuntu and I have <a href="">RVM</a> preinstalled. If you want to learn more about RVM then please read my previous article <a href="">Getting RVM</a>. You also can install ruby in your windows machine by installing <a href="">Rubyinstaller</a>
 and <a href="">PIK</a> (which works almost same as RVM in Windows).</p>
 
-<p>After getting ruby / rvm installed you can go to your Terminal or  hit <code>ctrl</code> + <code>alt</code> + <code>T</code> which will bring up your Terminal . Then in that type ,</p>
+<p>After getting ruby / rvm installed you can go to your Terminal or  hit <code class="highlighter-rouge">ctrl</code> + <code class="highlighter-rouge">alt</code> + <code class="highlighter-rouge">T</code> which will bring up your Terminal . Then in that type ,</p>
 
-<pre><code>$ gem install rails 
-</code></pre>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ gem install rails 
+</code></pre></div></div>
 
 <p>This will have rails installed in your computer. Or if you would like to have a rails gem without documentaion , you can type</p>
 
-<pre><code>$ gem install rails --without documentaion  # this will get rails without docs 
-</code></pre>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ gem install rails --without documentaion  # this will get rails without docs 
+</code></pre></div></div>
 
 <h3 id="step-2">Step 2:</h3>
 
 <p>Now if the installation is done you can go into your terminal and type:</p>
 
-<pre><code>$ rails --version
-</code></pre>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ rails --version
+</code></pre></div></div>
 
 <p>Which will bring up the version that has been installed. Now you can go to your preffered location in your computer and create rails app. Or , do it like me,</p>
 
-<pre><code>$ cd 	# This will take you to Home directory
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ cd 	# This will take you to Home directory
 
 $ mkdir workspace_rails		# This will make a new directory in your home path
 
 $ cd workspace_rails		# changing current directory into newly made directory
 
 $ rails new app 		# This will make a new rails app named "app" 
-</code></pre>
+</code></pre></div></div>
 
 <h3 id="step-3">Step 3:</h3>
 
 <p>After full installtion of a rails app , you can change the path to your new app and get the first running app , by typing,</p>
 
-<pre><code>$ cd app
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ cd app
 
 $ rails serve
-</code></pre>
+</code></pre></div></div>
 
 <p>This will bring up the new shiny app in a prebuilt and installed server , and you can see your app by going into your browser and typing <a href="#">localhost:3000</a> in address bar. And by this time you should be having a screen like this,</p>
 
@@ -162,10 +165,10 @@ $ rails serve
                     <li><a>technology</a></li>
                     
                 
-                    <li><a>ruby</a></li>
+                    <li><a>Ruby</a></li>
                     
                 
-                    <li><a>rails</a></li>
+                    <li><a>Rails</a></li>
                     
                    
                 </ul>
@@ -208,7 +211,8 @@ $ rails serve
 
 
 
-    <section class="footer ">
+    <hr>
+<section class="footer ">
 
     <div class="row">
 
@@ -232,7 +236,7 @@ $ rails serve
 
             
       <span>
-        <a class="header-link" href="http://mahabubislam.com"  target="_blank">
+        <a class="header-link" href="http://mahabub.space"  target="_blank">
             <i class="fa fa-2x fa-laptop"></i>
 
         </a>
@@ -240,12 +244,6 @@ $ rails serve
             
 
 
-            
-      <span>
-        <a class="header-link" href="https://facebook.com/fallencurse"  target="_blank">
-            <i class="fa fa-2x fa-facebook-square "></i>
-        </a>
-      </span>
             
         </div>
 

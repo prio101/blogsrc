@@ -10,29 +10,19 @@
   <title>Bit of SASS</title>
   <meta name="description" content="We are living in a age of wonders. How can you tell? Well in few years back developers had to take a lot of pain to make a good piece of CSS. Now they have s...">
 
-  <link rel="canonical" href="http://mahabubislam.me/technology/ruby/sass/2015/01/23/sass.html">
-  <!-- <link rel="alternate" type="application/rss+xml" title="Blog" href="http://mahabubislam.me/feed.xml" /> -->
-
+  <link rel="canonical" href="http://localhost:4000/technology/ruby/sass/2015/01/23/sass.html">
+  <!-- <link rel="alternate" type="application/rss+xml" title="Mahabub Islam" href="http://localhost:4000/feed.xml" /> -->
   <!-- Latest compiled and minified CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
  
-
-	
-  <!--Added styles css-->	
-  <link rel="stylesheet" href="/css/normalize.css"/>
-
-  <link rel="stylesheet" href="/css/custom.css"/>
-
-   <link rel="stylesheet" href="/css/style.css"/>
-
+    <!--Added styles css-->	
+    <link rel="stylesheet" href="/css/normalize.css"/>
+    <link rel="stylesheet" href="/css/custom.css"/>
+    <link rel="stylesheet" href="/css/style.css"/>
     <!--Font awesome-->
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-
    <!--modernizr-->
    <script src="js/modernizr.js"></script>
-	
-
-
 </head>
 
 
@@ -41,21 +31,34 @@
       <strong>It seems your browser is quite a bit old, to get latest browser go to this link <a href="http://browsehappy.com">BROWSE HAPPY </a> And get the happy face</strong>
   <![endif]-->
 
-  
-<!-- Start with the header -->
+  <!-- Start with the header -->
 <section class="header" id="header">
-
-
-
-    <a class="tab pi-default pi-big pi-flat" target="_blank" href="https://github.com/prio101"><i class="fa fa-github"></i> My Github</a>
-
+    <section class="social-links">
+        <a class="tab pi-default pi-big pi-flat" target="_blank" href="https://github.com/prio101">
+            <i class="fa fa-github"></i>
+        </a>
+        <a class="tab pi-warn pi-big pi-flat" target="_blank" href="https://medium.com/@miprio101">
+            <i class="fa fa-medium"></i> 
+        </a>
+        <a class="tab pi-default pi-big pi-flat" target="_blank" href="https://twitter.com/prio_mahabub">
+            <i class="fa fa-twitter"></i> 
+        </a>
+        <a class="tab pi-warn pi-big pi-flat" target="_blank" href="https://stackoverflow.com/users/story/3276347">
+            <i class="fa fa-stack-overflow"></i> 
+        </a>
+        <a class="tab pi-default pi-big pi-flat" target="_blank" href="https://www.linkedin.com/in/miprio101/">
+            <i class="fa fa-linkedin"></i> 
+        </a>
+    </section>
+    
     <!-- Main Head Title -->
-    <h2><a href="/">Blog</a></h2>
-    <p>A little space ship</p>
-
-
-
-
+    <h2><a href="/">Mahabub Islam</a></h2>
+    <p>Nerdy Space Astronaut</p>
+    <section class="pages">
+        <a  href="/">Home</a>
+        <a  href="/about">About</a>
+        <a  href="/career">Career</a>
+    </section>
 </section>
 
 
@@ -100,13 +103,13 @@ More on this , Follow along,</p>
 <p>Its easy, if you have Ruby installed in your computer, Then you can install it with gem installer.
 Like,</p>
 
-<pre><code>$ gem install sass
-</code></pre>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ gem install sass
+</code></pre></div></div>
 
 <p>Check after installation ,</p>
 
-<pre><code>$ sass --version
-</code></pre>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ sass --version
+</code></pre></div></div>
 
 <p>And it should be there showing the glorius version .</p>
 
@@ -123,16 +126,16 @@ Like,</p>
 
 <p>First thing first , <strong>The variable</strong>. It always as a regular variable of programming languages , for more easier concept its just like a Javascript variable for holding Data.Example,</p>
 
-<pre><code>$font-color : #000 ;
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$font-color : #000 ;
 $background-color: #fff ;
 $font-size: 1em ;
-</code></pre>
+</code></pre></div></div>
 
-<p>So , SCSS use <code>$</code> in front of a variable name . And that is easy as pie.</p>
+<p>So , SCSS use <code class="highlighter-rouge">$</code> in front of a variable name . And that is easy as pie.</p>
 
 <p>Now it does come to the power of Nesting up the styles, With this nesting you can make perfect tree structure of styles.Example:</p>
 
-<pre><code>.class{
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>.class{
 	
 	.class-a{
 		font-family: $font-family-a ;
@@ -145,20 +148,20 @@ $font-size: 1em ;
 	color: $font-color-default ;
 
 }	
-</code></pre>
+</code></pre></div></div>
 
 <p>Easy and convenient , Right ? Now I give you permission to laugh with joy.</p>
 
-<p>Another fun with SASS , It supports the Partial system. Just by naming something as in this <code>_partial</code> format , you can write down small snippet of style sheet. Which as collectively can be used in a single style sheet , by using <code>@import</code>keyword.
+<p>Another fun with SASS , It supports the Partial system. Just by naming something as in this <code class="highlighter-rouge">_partial</code> format , you can write down small snippet of style sheet. Which as collectively can be used in a single style sheet , by using <code class="highlighter-rouge">@import</code>keyword.
 Example:</p>
 
-<pre><code>@import 'partial' ;  # where it is _partial
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>@import 'partial' ;  # where it is _partial
 
 .class{
 	color: $color ;
 	padding: $padding ;
 }
-</code></pre>
+</code></pre></div></div>
 
 <p>I am quite tired now , talking about all these stuff. But a lot more features still is in store. I think , it would be better If we talk about it in another article.</p>
 
@@ -181,10 +184,10 @@ Example:</p>
                     <li><a>technology</a></li>
                     
                 
-                    <li><a>ruby</a></li>
+                    <li><a>Ruby</a></li>
                     
                 
-                    <li><a>sass</a></li>
+                    <li><a>Sass</a></li>
                     
                    
                 </ul>
@@ -227,7 +230,8 @@ Example:</p>
 
 
 
-    <section class="footer ">
+    <hr>
+<section class="footer ">
 
     <div class="row">
 
@@ -251,7 +255,7 @@ Example:</p>
 
             
       <span>
-        <a class="header-link" href="http://mahabubislam.com"  target="_blank">
+        <a class="header-link" href="http://mahabub.space"  target="_blank">
             <i class="fa fa-2x fa-laptop"></i>
 
         </a>
@@ -259,12 +263,6 @@ Example:</p>
             
 
 
-            
-      <span>
-        <a class="header-link" href="https://facebook.com/fallencurse"  target="_blank">
-            <i class="fa fa-2x fa-facebook-square "></i>
-        </a>
-      </span>
             
         </div>
 

@@ -10,29 +10,19 @@
   <title>Streams of Gulp</title>
   <meta name="description" content="Modern Ecology of advanced tools made web development quite easy and more welcoming . As you can see there is countless stuff out there to bake our scratch-p...">
 
-  <link rel="canonical" href="http://mahabubislam.me/technology/gulp/javascript/nodejs/streams/2015/07/08/gulpjs.html">
-  <!-- <link rel="alternate" type="application/rss+xml" title="Blog" href="http://mahabubislam.me/feed.xml" /> -->
-
+  <link rel="canonical" href="http://localhost:4000/technology/gulp/javascript/nodejs/streams/2015/07/08/gulpjs.html">
+  <!-- <link rel="alternate" type="application/rss+xml" title="Mahabub Islam" href="http://localhost:4000/feed.xml" /> -->
   <!-- Latest compiled and minified CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
  
-
-	
-  <!--Added styles css-->	
-  <link rel="stylesheet" href="/css/normalize.css"/>
-
-  <link rel="stylesheet" href="/css/custom.css"/>
-
-   <link rel="stylesheet" href="/css/style.css"/>
-
+    <!--Added styles css-->	
+    <link rel="stylesheet" href="/css/normalize.css"/>
+    <link rel="stylesheet" href="/css/custom.css"/>
+    <link rel="stylesheet" href="/css/style.css"/>
     <!--Font awesome-->
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-
    <!--modernizr-->
    <script src="js/modernizr.js"></script>
-	
-
-
 </head>
 
 
@@ -41,21 +31,34 @@
       <strong>It seems your browser is quite a bit old, to get latest browser go to this link <a href="http://browsehappy.com">BROWSE HAPPY </a> And get the happy face</strong>
   <![endif]-->
 
-  
-<!-- Start with the header -->
+  <!-- Start with the header -->
 <section class="header" id="header">
-
-
-
-    <a class="tab pi-default pi-big pi-flat" target="_blank" href="https://github.com/prio101"><i class="fa fa-github"></i> My Github</a>
-
+    <section class="social-links">
+        <a class="tab pi-default pi-big pi-flat" target="_blank" href="https://github.com/prio101">
+            <i class="fa fa-github"></i>
+        </a>
+        <a class="tab pi-warn pi-big pi-flat" target="_blank" href="https://medium.com/@miprio101">
+            <i class="fa fa-medium"></i> 
+        </a>
+        <a class="tab pi-default pi-big pi-flat" target="_blank" href="https://twitter.com/prio_mahabub">
+            <i class="fa fa-twitter"></i> 
+        </a>
+        <a class="tab pi-warn pi-big pi-flat" target="_blank" href="https://stackoverflow.com/users/story/3276347">
+            <i class="fa fa-stack-overflow"></i> 
+        </a>
+        <a class="tab pi-default pi-big pi-flat" target="_blank" href="https://www.linkedin.com/in/miprio101/">
+            <i class="fa fa-linkedin"></i> 
+        </a>
+    </section>
+    
     <!-- Main Head Title -->
-    <h2><a href="/">Blog</a></h2>
-    <p>A little space ship</p>
-
-
-
-
+    <h2><a href="/">Mahabub Islam</a></h2>
+    <p>Nerdy Space Astronaut</p>
+    <section class="pages">
+        <a  href="/">Home</a>
+        <a  href="/about">About</a>
+        <a  href="/career">Career</a>
+    </section>
 </section>
 
 
@@ -111,7 +114,7 @@ This is why in my terminal I wrote <kbd>cd /workstation/gulp-try/</kbd>. After t
 
 <p>After that in the directory we have to create a file named <code>gulpfile.js</code>. After creating the file and opening it on any text editor. We have to write something like this to use gulp and gulp uglify. Just follow along and later we will explain more about it.</p>
 
-<pre><code>  var gulp        = require('gulp'),
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  var gulp        = require('gulp'),
       gulpUglify  = require('gulp-uglify');
 
   gulp.task('compress', function() {
@@ -121,15 +124,15 @@ This is why in my terminal I wrote <kbd>cd /workstation/gulp-try/</kbd>. After t
   });
 
   gulp.task('default',['compress']);
-</code></pre>
+</code></pre></div></div>
 
 <hr />
 
 <p>If we take a good look now we will see that we had to define two variable named <code>gulp</code> and <code>gulpUglify</code> and what it does is , these variables requires the gulp and gulp-uglify node modules and loads it and make it ready.</p>
 
-<p>After that you can see we wrote <code>gulp.task()</code> this is where we write specific task a module need to done for us. Inside the parentheses you will notice we named the task as <code>compress</code> and called a callback function after that. Inside the function returned the destination of scripts location we want to get compressed .</p>
+<p>After that you can see we wrote <code class="highlighter-rouge">gulp.task()</code> this is where we write specific task a module need to done for us. Inside the parentheses you will notice we named the task as <code class="highlighter-rouge">compress</code> and called a callback function after that. Inside the function returned the destination of scripts location we want to get compressed .</p>
 
-<p>After getting the source path we wrote , a pipe method which will add boundless and limitless features to a gulp task. In here we at first added the required <code>gulpUglify()</code> method and after that, we send a destination where it should save the files after compressing.</p>
+<p>After getting the source path we wrote , a pipe method which will add boundless and limitless features to a gulp task. In here we at first added the required <code class="highlighter-rouge">gulpUglify()</code> method and after that, we send a destination where it should save the files after compressing.</p>
 
 <p>At the very bottom of the code snippets , we wrote a default task , which will run when we invoke <kbd>gulp</kbd> in our terminal from that directory. This default task can take a array of tasks, thus you can invoke a series of different tasks module pretty easily one after another.</p>
 
@@ -203,7 +206,8 @@ This is why in my terminal I wrote <kbd>cd /workstation/gulp-try/</kbd>. After t
 
 
 
-    <section class="footer ">
+    <hr>
+<section class="footer ">
 
     <div class="row">
 
@@ -227,7 +231,7 @@ This is why in my terminal I wrote <kbd>cd /workstation/gulp-try/</kbd>. After t
 
             
       <span>
-        <a class="header-link" href="http://mahabubislam.com"  target="_blank">
+        <a class="header-link" href="http://mahabub.space"  target="_blank">
             <i class="fa fa-2x fa-laptop"></i>
 
         </a>
@@ -235,12 +239,6 @@ This is why in my terminal I wrote <kbd>cd /workstation/gulp-try/</kbd>. After t
             
 
 
-            
-      <span>
-        <a class="header-link" href="https://facebook.com/fallencurse"  target="_blank">
-            <i class="fa fa-2x fa-facebook-square "></i>
-        </a>
-      </span>
             
         </div>
 
