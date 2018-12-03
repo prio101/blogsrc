@@ -1,0 +1,409 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Mix Elixir project with Ecto</title>
+  <meta name="description" content="In this post I am going to share how to make a Mix project with Elixir and Ecto. I was using Elixir 1.7.3 while making this project.For this section, I start...">
+
+  <link rel="canonical" href="http://localhost:4000/technology/elixir/ecto/mix/2018/07/30/mix-elixir-project-with-ector.html">
+  <!-- <link rel="alternate" type="application/rss+xml" title="Mahabub Islam" href="http://localhost:4000/feed.xml" /> -->
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+ 
+    <!--Added styles css-->	
+    <link rel="stylesheet" href="/css/normalize.css"/>
+    <link rel="stylesheet" href="/css/custom.css"/>
+    <link rel="stylesheet" href="/css/style.css"/>
+    <!--Font awesome-->
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+   <!--modernizr-->
+   <script src="js/modernizr.js"></script>
+</head>
+
+
+  <body>
+  <!--[if lt IE 7]>
+      <strong>It seems your browser is quite a bit old, to get latest browser go to this link <a href="http://browsehappy.com">BROWSE HAPPY </a> And get the happy face</strong>
+  <![endif]-->
+
+  <!-- Start with the header -->
+<section class="header" id="header">
+    <section class="social-links">
+        <a class="tab pi-default pi-big pi-flat" target="_blank" href="https://github.com/prio101">
+            <i class="fa fa-github"></i>
+        </a>
+        <a class="tab pi-warn pi-big pi-flat" target="_blank" href="https://medium.com/@miprio101">
+            <i class="fa fa-medium"></i> 
+        </a>
+        <a class="tab pi-default pi-big pi-flat" target="_blank" href="https://twitter.com/prio_mahabub">
+            <i class="fa fa-twitter"></i> 
+        </a>
+        <a class="tab pi-warn pi-big pi-flat" target="_blank" href="https://stackoverflow.com/users/story/3276347">
+            <i class="fa fa-stack-overflow"></i> 
+        </a>
+        <a class="tab pi-default pi-big pi-flat" target="_blank" href="https://www.linkedin.com/in/miprio101/">
+            <i class="fa fa-linkedin"></i> 
+        </a>
+    </section>
+    
+    <!-- Main Head Title -->
+    <h2><a href="/">Mahabub Islam</a></h2>
+    <p>Nerdy Space Astronaut</p>
+    <section class="pages">
+        <a  href="/">Home</a>
+        <a  href="/about">About</a>
+        <a  href="/career">Career</a>
+    </section>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="container">
+
+
+          <!--start of the post title-->
+    <section class="single-post-title-main">
+        <h2>Mix Elixir project with Ecto</h2>
+        <small>Written by Mahabub I.</small>
+    </section>
+<!--End of the post title-->
+
+<!--Start of the section post-->
+    <section class="post">
+       <p>
+          <p>In this post I am going to share how to make a Mix project with Elixir and Ecto. I was using Elixir 1.7.3 while making this project.
+For this section, I started with an empty template of the mix project but its a template. More about this can be found over here.</p>
+
+<p>After installing it I pulled a template form hex,</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mix template.install hex gen_template_ecto_service
+</code></pre></div></div>
+
+<p>and after this run command to have a mix project with Ecto,</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mix gen ecto_service project_name --module_name=ModuleName
+cd project_name
+mix deps.get
+</code></pre></div></div>
+
+<p>Now I have to open the project and update the credentials over the <code>config/dev.exs</code></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>use Mix.Config
+
+config :todolist, TodoList.Repo, [
+    adapter: Ecto.Adapters.Postgres,
+    database: "todolist_#{Mix.env}",
+    username: "postgres",
+    password: "",
+    hostname: "localhost",
+]
+</code></pre></div></div>
+
+<p>after we can run the command over terminal,</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mix ecto.create     
+</code></pre></div></div>
+
+<p>It will create a database with the project name. And will initialize the Repo.</p>
+
+<p>After this, I tried to create Migration and generate it.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mix ecto.gen.migration create_tasks_table 
+</code></pre></div></div>
+
+<p>And write the migration, into ‘/repo/migration/migration_file_name’</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    defmodule TodoList.Repo.Migrations.CreateTasks do
+    use Ecto.Migration
+
+        def change do
+            create table("tasks") do
+            add :task_name, :string
+            add :task_description, :string
+            add :task_status, :string
+            timestamps()
+            end
+        end
+    end
+</code></pre></div></div>
+
+<p>And run, <code class="highlighter-rouge">mix ecto.migrate  </code></p>
+
+<p>After this to spin up a CRUD app to check the power of the Ecto I created,</p>
+
+<p><code class="highlighter-rouge">todo_list/task.ex</code> over the Module directory.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    defmodule TodoList.Task do
+        use Ecto.Schema
+        import Poison 
+        alias TodoList.Repo
+
+        schema "tasks" do
+            field :task_name
+            field :task_description
+            field :task_status
+
+        timestamps()
+    end
+
+        def tasks do
+            Repo.all TodoList.Task
+        end
+
+        def create_task(name, description, status) do
+            %TodoList.Task{task_name: name, task_description: description, task_status: status}
+            |&gt; Repo.insert()
+        end
+
+        def show_task(id) do
+            Repo.get!(TodoList.Task, id)
+            |&gt; convert_to_map
+            |&gt; drop_meta
+            |&gt; encode_poison
+        end
+
+        def update_task(id, changeset) do
+            task = Repo.get!(TodoList.Task, id)
+            task_change = Ecto.Changeset.change task, changeset
+
+            case Repo.update task_change do
+            {:ok, struct} -&gt; "Updated"
+            {:error, changeset} -&gt; "can not update"
+            end
+        end
+
+        def delete_task(id) do
+            task = Repo.get!(TodoList.Task, id)
+            case Repo.delete task do
+            {:ok, struct} -&gt; "Deleted #{id} numbered task"
+            {:error, changeset} -&gt; "Could not delete #{id} task"
+            end
+        end
+
+        defp convert_to_map(task) do
+            Map.from_struct(task)
+        end
+
+        defp drop_meta(task) do
+            Map.drop(task, [:__meta__])
+        end
+
+        defp encode_poison(task) do
+            Poison.encode!(task)
+        end
+        end
+</code></pre></div></div>
+
+<p>Now, we can boot up iex -S mix and run,</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt; TodoList.Task.create_task("Work", "Work for elixir", "incomplete")
+
+&gt; TodoList.Task.tasks
+
+&gt;&gt; [
+%TodoList.Task{
+    __meta__: #Ecto.Schema.Metadata&lt;:loaded, "tasks"&gt;,
+    id: 1,
+    inserted_at: ~N[2018-08-27 18:11:46.807061],
+    task_description: "Work for elixir",
+    task_name: "Work",
+    task_status: "incomplete",
+    updated_at: ~N[2018-08-27 18:11:46.811099]
+}
+]
+
+
+
+&gt; TodoList.Task.show_task(1) #id
+
+&gt;&gt; "{\"updated_at\":\"2018-08-27T18:11:46.811099\",\"task_status\":\"incomplete\",\"task_name\":\"Work\",\"task_description\":\"Work for elixir\",\"inserted_at\":\"2018-08-27T18:11:46.807061\",\"id\":1}"
+
+&gt; TodoList.Task.update_task(1, %{task_name: "New Name"}) 
+#id, changeset
+
+&gt;&gt; "Updated"
+
+&gt; TodoList.Task.delete_task(1) #id
+
+&gt;&gt; "Deleted 1 numbered task"
+</code></pre></div></div>
+
+<p>And this is a small CRUD based todolist made with mix project.</p>
+
+<p>The github link of the full code is here: <a href="https://github.com/prio101/mix_todo_app">Link</a> Of the Project.</p>
+
+
+       </p>
+
+    </section>
+
+    <!--start of section author-->
+    <section class="single-author">
+        <div class="post-details">
+            <p>Written by :    Mahabub Islam</p>
+            <span> Done At: Jul 30,2018</span>
+            <div class="categories">
+                <em>Categories:</em>
+                <ul>
+                
+                    <li><a>technology</a></li>
+                    
+                
+                    <li><a>elixir</a></li>
+                    
+                
+                    <li><a>ecto</a></li>
+                    
+                
+                    <li><a>mix</a></li>
+                    
+                   
+                </ul>
+            </div>
+
+          
+
+        </div>
+    </section>
+<!--End of section author-->
+	
+  <div class="col-sm-offset-2 col-sm-10 col-md-offset-2 col-md-8">
+	    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'prioblog'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    
+  </div>
+	
+
+   
+  </div>
+
+</div>
+<hr/>
+
+
+
+</section>
+
+
+
+
+    <hr>
+<section class="footer ">
+
+    <div class="row">
+
+        <div class="col-sm-offset-3 col-md-offset-3 col-md-6 text-center">
+            
+      <span>
+        <a class="header-link" href="https://github.com/prio101" target="_blank">
+            <i class="fa fa-2x fa-github-square 3x"></i>
+        </a>
+      </span>
+            
+
+
+            
+      <span>
+        <a class="header-link" href="https://twitter.com/prio_mahabub" target="_blank">
+            <i class="fa fa-2x fa-twitter 3x"></i>
+        </a>
+      </span>
+            
+
+            
+      <span>
+        <a class="header-link" href="http://mahabub.space"  target="_blank">
+            <i class="fa fa-2x fa-laptop"></i>
+
+        </a>
+      </span>
+            
+
+
+            
+        </div>
+
+    </div>
+  <div class="row">
+  <div class="col-sm-offset-2 col-sm-5 col-md-offset-5 col-md-6 ">
+    <small><a href="http://www.mahabubislam.com">Mahabub I. </a><sup>&reg </sup>--- powerd by <a href="http://jekyllrb.com/">Jekyll</a></small>
+  </div>
+
+ 
+      <script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'prioblog'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+    </script>
+
+
+</section>
+
+
+    </div>
+    <!-- Scripts -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="assets/js/jquery.js"><\/script>')</script>
+
+<!-- Add custom scripts here -->
+<!-- Bootstrap js -->
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+<!-- Parallax js -->
+<script type="text/javascript" src="jquery.localscroll-1.2.7-min.js"></script>
+<script type="text/javascript" src="jquery.parallax-1.1.3.js"></script>
+<script type="text/javascript" src="jquery.scrollTo-1.4.2-min.js"></script>
+<script src="js/snippet.js"></script>
+<!-- /end of parallax js -->
+
+
+
+<!-- Add your google analytics here -->
+<!-- Change the XXXXXXX section in your site id -->
+<script>
+    (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+        e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+        e.src='//www.google-analytics.com/analytics.js';
+        r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+    ga('create','UA-XXXXX-X');ga('send','pageview');
+</script>
+
+	
+
+
+  </body>
+
+</html>
